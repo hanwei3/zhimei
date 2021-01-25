@@ -1,0 +1,37 @@
+‘’‘1
+store的另一种使用方式
+import { getModule } from 'vuex-module-decorators';
+const PassengerStoreModule = getModule(PassengerStore, this.$store);
+
+
+
+‘’‘2
+// 两种使用getModule的方法
+// 1. module上使用store
+@Module({ dynamic: true, store, name: 'mymod' })
+class MyModule extends VuexModule {
+  someField: number = 10
+}
+const myMod = getModule(MyModule)
+myMod.someField //works
+myMod.someOtherField //Typescript will error, as field doesn't exist
+// 2. module上不使用store,  getModule使用store
+@Module({ dynamic: true, name: 'mymod' })
+class MyModule extends VuexModule {
+  someField: number = 10
+}
+const myMod = getModule(MyModule,store)
+
+
+‘’‘3
+在vuex中是要通过commit来更改state中的数据.在vuex-module-decorators中有MutationAction修饰器,可以直接修改state数据.
+@MutationAction({ mutate: ['username', 'password'] })
+  async setPassenger(name: string) {
+    const response: any = await request(name); // 接口返回 [{name:'张三',password:'123456'}]
+    // 此处返回值必须和上面mutate后面的名称保持一致;
+    return {
+      username: response[0].name,
+      password: response[0].password,
+    };
+  }
+

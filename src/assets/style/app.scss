@@ -1,0 +1,16 @@
+/* app样式专用 */
+
+// tkapp专享
+.tkapp .nav-bar{
+    display: none;
+}
+.tkapp .nav-bar + .container{
+    padding-top: 0;
+}
+// 指定页面需要在app内战时头部信息
+.nav-barBlock{
+    display: flex !important;
+}
+.nav-barBlock + .container{
+    padding-top: .88rem !important;
+}

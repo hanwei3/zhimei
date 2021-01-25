@@ -1,0 +1,27 @@
+$common-bg-color : #f1f2f3; //基础背景色颜色
+
+$base-font-size : 14PX; //基础字体大小
+$base-font-color: #333; //基础字体颜色
+
+$color-main: #ff4338; // 主颜色
+$color-gray: #999; // 灰色
+$color-up: #ff1a02; // 上涨红色
+$color-down: #03b602; // 下跌绿色
+
+$color-dark-bg: #181818; // 黑色主题 nav
+
+
+$color-text-dark: #e4ab40; // 深色版文字颜色
+$color-text-light: #fde543; // 浅色版文字颜色
+
+$max-screen-width: 750px; // 屏幕设计最宽
+$nav-height: 88px;  // 导航栏高度
+
+/*zindex*/
+$z-index-toast: 30020; /*toast*/
+$z-index-msgbox: 30010; /*msgbox*/
+
+/*padding*/
+$padding: 0 40px; /*toast*/
+
+$cdn-path: 'https://rs.tanxingk.com';
